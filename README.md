@@ -1,0 +1,1 @@
+# sesinucleodegames-takanakuy
