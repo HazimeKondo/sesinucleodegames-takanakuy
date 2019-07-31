@@ -24,6 +24,14 @@ public class PlayerControls : IInputActionCollection
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""53aa6c67-7d7c-4638-8d1b-35af6d50222b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -81,6 +89,17 @@ public class PlayerControls : IInputActionCollection
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""507a36b9-cc4f-470a-b8fc-bf0f25d7460e"",
+                    ""path"": ""<Mouse>/press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -90,6 +109,7 @@ public class PlayerControls : IInputActionCollection
         // Keyboard
         m_Keyboard = asset.GetActionMap("Keyboard");
         m_Keyboard_Move = m_Keyboard.GetAction("Move");
+        m_Keyboard_Attack = m_Keyboard.GetAction("Attack");
     }
 
     ~PlayerControls()
@@ -140,11 +160,13 @@ public class PlayerControls : IInputActionCollection
     private readonly InputActionMap m_Keyboard;
     private IKeyboardActions m_KeyboardActionsCallbackInterface;
     private readonly InputAction m_Keyboard_Move;
+    private readonly InputAction m_Keyboard_Attack;
     public struct KeyboardActions
     {
         private PlayerControls m_Wrapper;
         public KeyboardActions(PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Keyboard_Move;
+        public InputAction @Attack => m_Wrapper.m_Keyboard_Attack;
         public InputActionMap Get() { return m_Wrapper.m_Keyboard; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -157,6 +179,9 @@ public class PlayerControls : IInputActionCollection
                 Move.started -= m_Wrapper.m_KeyboardActionsCallbackInterface.OnMove;
                 Move.performed -= m_Wrapper.m_KeyboardActionsCallbackInterface.OnMove;
                 Move.canceled -= m_Wrapper.m_KeyboardActionsCallbackInterface.OnMove;
+                Attack.started -= m_Wrapper.m_KeyboardActionsCallbackInterface.OnAttack;
+                Attack.performed -= m_Wrapper.m_KeyboardActionsCallbackInterface.OnAttack;
+                Attack.canceled -= m_Wrapper.m_KeyboardActionsCallbackInterface.OnAttack;
             }
             m_Wrapper.m_KeyboardActionsCallbackInterface = instance;
             if (instance != null)
@@ -164,6 +189,9 @@ public class PlayerControls : IInputActionCollection
                 Move.started += instance.OnMove;
                 Move.performed += instance.OnMove;
                 Move.canceled += instance.OnMove;
+                Attack.started += instance.OnAttack;
+                Attack.performed += instance.OnAttack;
+                Attack.canceled += instance.OnAttack;
             }
         }
     }
@@ -171,5 +199,6 @@ public class PlayerControls : IInputActionCollection
     public interface IKeyboardActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
     }
 }
