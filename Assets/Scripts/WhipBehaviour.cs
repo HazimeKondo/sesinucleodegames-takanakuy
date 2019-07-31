@@ -6,22 +6,30 @@ using UnityEngine.Serialization;
 
 public class WhipBehaviour : MonoBehaviour
 {
-    [SerializeField] private float _halfRange = 2;
+    [SerializeField] private float _range = 2;
     [SerializeField] private float _halfThickness = 0.5f;
 
-    private void Awake()
+
+
+
+    private void Start()
     {
-        throw new System.NotImplementedException();
+        Player.Input.Keyboard.Attack.performed += ctx => { Attack(); } ;
+    }
+    private void Update()
+    {
+        //rotacionar player
     }
 
-
+    [Button]
     private void Attack()
-    {
-        Collider[] colls = Physics.OverlapBox(transform.position + transform.forward * _halfRange, new Vector3(_halfThickness ,1,_halfRange), transform.rotation);
-        if (colls.Length > 0)
+    {        
+        RaycastHit hit;
+        if (Physics.SphereCast(transform.position + (transform.forward*transform.localScale.x/2), _halfThickness , Vector3.forward , out hit, _range))
         {
-            colls.First().GetComponent<CrowdBehaviour>().Hit();
+            hit.transform.GetComponent<CrowdBehaviour>().Hit();
         }
     }
-    
+
+
 }
