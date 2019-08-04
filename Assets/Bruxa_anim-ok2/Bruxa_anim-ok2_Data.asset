@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a64e5b0e436d4bed9780211ae245f7b, type: 3}
+  m_Name: Bruxa_anim-ok2_Data
+  m_EditorClassIdentifier: 
+  dataName: Bruxa_anim-ok2
+  dragonBonesJSON: {fileID: 4900000, guid: 80cc10f24bfde34448b8d001d3cf56b0, type: 3}
+  textureAtlas:
+  - textureAtlasJSON: {fileID: 4900000, guid: 9e038962da7f09640b0b1f7b50ed1234, type: 3}
+    texture: {fileID: 2800000, guid: 2e2ba4a1a0ba5384f8498e66c8cff912, type: 3}
+    material: {fileID: 2100000, guid: 9ef4df13d51207240af55854d9ec1eee, type: 2}
+    uiMaterial: {fileID: 0}
