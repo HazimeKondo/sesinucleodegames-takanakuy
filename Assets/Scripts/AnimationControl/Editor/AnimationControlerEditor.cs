@@ -8,7 +8,7 @@ using DragonBones;
 public class AnimationControlerEditor : Editor
 {
     private AnimationControler t;
-   
+
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
@@ -23,6 +23,11 @@ public class AnimationControlerEditor : Editor
 
     private void ActionButton()
     {
+        if (GUILayout.Button("Flip"))
+        {
+            t.Flip();
+        }
+
         EditorGUILayout.BeginHorizontal();
         if (GUILayout.Button("Idle"))
         {
@@ -34,24 +39,24 @@ public class AnimationControlerEditor : Editor
             t.Walk();
         }
         EditorGUILayout.EndHorizontal();
+        t.timeScale = EditorGUILayout.FloatField(t.timeScale);
         EditorGUILayout.BeginHorizontal();
-        t.tAnimation = EditorGUILayout.TextField("animationName", t.tAnimation);
-       // Debug.Log(t.tAnimation);
+        t.tAnimation = EditorGUILayout.TextField("Animation Name", t.tAnimation);
+        
+        // Debug.Log(t.tAnimation);     
+        EditorGUILayout.EndHorizontal();
+        EditorGUILayout.BeginHorizontal();
 
-        if (t.armature.animation.isPlaying)
+        if (GUILayout.Button("Stop"))
         {
-            if (GUILayout.Button("Stop"))
-            {
-                t.Stop();
-            }
+            t.Stop();
         }
-        else
+
+        if (GUILayout.Button("Play"))
         {
-            if (GUILayout.Button("Play"))
-            {
-                t.Play(t.tAnimation, 0);
-            }
+            t.Play(t.tAnimation, 0, t.timeScale);
         }
+
         EditorGUILayout.EndHorizontal();
     }
 

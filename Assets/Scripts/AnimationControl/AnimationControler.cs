@@ -9,7 +9,8 @@ public class AnimationControler : MonoBehaviour
 {
     public UnityArmatureComponent armature;
     public string tAnimation = "";
-    
+    public float timeScale = 1;
+
     private void Awake()
     {
         armature = GetComponent<UnityArmatureComponent>();
@@ -27,7 +28,7 @@ public class AnimationControler : MonoBehaviour
         }
     }
 
-    public void Play(string animationName, int playTimes = 0, int timeScale = 1)
+    public void Play(string animationName, int playTimes = 0, float timeScale = 1)
     {
         armature.animation.timeScale = timeScale;
         armature.animation.Play(animationName, playTimes);
@@ -56,5 +57,12 @@ public class AnimationControler : MonoBehaviour
     public void Run(int timeScale = 1, int playTimes = 0)
     {
         Play("run", playTimes, timeScale);
+    }
+
+    public void Flip()
+    {
+        Vector3 xscale = armature.transform.localScale;
+        xscale.x *= -1;
+        armature.transform.localScale = xscale;
     }
 }
