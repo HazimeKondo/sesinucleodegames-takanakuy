@@ -4,16 +4,33 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using DragonBones;
 
+[RequireComponent(typeof(UnityArmatureComponent))]
 public class AnimationControler : MonoBehaviour
 {
     public UnityArmatureComponent armature;
-    //public List<string> _animationNames = Armature.
+    public string tAnimation = "";
+    
+    private void Awake()
+    {
+        armature = GetComponent<UnityArmatureComponent>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            Walk();
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            Idle();
+        }
+    }
 
     public void Play(string animationName, int playTimes = 0, int timeScale = 1)
     {
         armature.animation.timeScale = timeScale;
         armature.animation.Play(animationName, playTimes);
-       // var a=armature.animation.animationNames;
     }
 
     public void Stop()
@@ -36,7 +53,6 @@ public class AnimationControler : MonoBehaviour
         Play("whip", playTimes, timeScale);
     }
 
-    [ContextMenu("aaaaa")]
     public void Run(int timeScale = 1, int playTimes = 0)
     {
         Play("run", playTimes, timeScale);
