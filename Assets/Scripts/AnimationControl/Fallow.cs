@@ -15,6 +15,12 @@ public class Fallow : MonoBehaviour
         transform.position = objFalow.transform.position + offSet;
         animationControler = GetComponent<AnimationControler>();
         rbFallow = objFalow.GetComponent<Rigidbody>();
+       // animationControler.Idle();
+    }
+
+    private void Start()
+    {
+        animationControler.Idle();
     }
 
     void LookDir()
