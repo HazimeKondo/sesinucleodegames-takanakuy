@@ -25,7 +25,7 @@ public class AnimationControlerEditor : Editor
     {
         if (GUILayout.Button("Flip"))
         {
-            t.Flip();
+          //  t.Flip();
         }
 
         EditorGUILayout.BeginHorizontal();
