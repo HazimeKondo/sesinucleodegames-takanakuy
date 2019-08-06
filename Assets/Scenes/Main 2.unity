@@ -1016,6 +1016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 10
+  _chargingMoveSpeed: 4
 --- !u!54 &912829979
 Rigidbody:
   m_ObjectHideFlags: 0

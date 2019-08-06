@@ -15,13 +15,19 @@ public class Player : MonoBehaviour
         _input = new PlayerControls();
     }
 
-    private void OnEnable()
+    private void Start()
     {
-        _input.Enable();
+        GameManager.Instance.OnStartPlay += _input.Enable;
+        GameManager.Instance.OnEndPlay += _input.Disable;
     }
 
-    private void OnDisable()
-    {
-        _input.Disable();
-    }
+//    private void OnEnable()
+//    {
+//        _input.Enable();
+//    }
+//
+//    private void OnDisable()
+//    {
+//        _input.Disable();
+//    }
 }

@@ -4,10 +4,12 @@ using UnityEngine;
 public class CrowdBehaviour : MonoBehaviour
 {
     private Vector3 rootOrigin;
-
+    private bool canBeHit = true;
+    
     private void Start()
     {
         rootOrigin = transform.position;
+        GameManager.Instance.OnEndPlay += () => canBeHit = false;
     }
     
     [Button]
@@ -20,7 +22,8 @@ public class CrowdBehaviour : MonoBehaviour
     [Button]
     public void Hit()
     {
-        Retreat(CrowdManager.Distance);
+        if(canBeHit)
+            Retreat(CrowdManager.Distance);
     }
     
     private void Retreat(float distance)
@@ -40,6 +43,10 @@ public class CrowdBehaviour : MonoBehaviour
             interpolation += Time.deltaTime / CrowdManager.ProgressDuration;
             transform.position = Vector3.Lerp(initialPos,desiredPos,interpolation);
             yield return null;
+            if (Vector3.Distance(rootOrigin, transform.position) >= 10)
+            {
+                GameManager.Instance.StopPlay();
+            }
         }
         transform.position = desiredPos;
     }
