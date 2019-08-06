@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e698ec6f27ace204eab74244fd8b4524
+guid: 57011881615d0c24d860cf48cb00392c
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable: []
@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: medievalfantasyforest_unwrap
-    second: {fileID: 2100000, guid: 432ed6d03e8352f458ebd7aa2608c27a, type: 2}
+    second: {fileID: 2100000, guid: cc6c748742735394dbf0d498b54cd3e6, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
