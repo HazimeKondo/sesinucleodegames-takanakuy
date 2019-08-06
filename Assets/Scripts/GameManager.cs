@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,19 +15,28 @@ public class GameManager : MonoBehaviour
     
     void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this; 
-            DontDestroyOnLoad(gameObject);
-            return;
-        }
-        
-        Destroy(gameObject);
+//        if (Instance == null)
+//        {
+//            Instance = this; 
+//            DontDestroyOnLoad(gameObject);
+//            return;
+//        }
+//        
+//        Destroy(gameObject);
+        Instance = this;
     }
 
     private void Start()
     {
         StartCoroutine(GameLoop());
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     public void StopPlay()

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Linq;
 using OverlapColliders;
 using UnityEngine;
@@ -64,5 +65,11 @@ public class WhipBehaviour : MonoBehaviour {
             hit.transform.GetComponent<CrowdBehaviour>().Hit();
         }
         _whip.transform.localScale = new Vector3(1f, 0f, 0f);
+    }
+
+    private void OnDestroy()
+    {
+        Player.Input.Keyboard.Attack.performed -= ctx => { Attack(); };
+        Player.Input.Keyboard.Attack.canceled -= ctx => { EndCharge(); }; ;
     }
 }

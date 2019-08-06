@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +20,13 @@ public class Player : MonoBehaviour
     {
         GameManager.Instance.OnStartPlay += _input.Enable;
         GameManager.Instance.OnEndPlay += _input.Disable;
+    }
+
+    private void OnDestroy()
+    {
+        Input.Disable();
+        GameManager.Instance.OnStartPlay -= _input.Enable;
+        GameManager.Instance.OnEndPlay -= _input.Disable;
     }
 
 //    private void OnEnable()
