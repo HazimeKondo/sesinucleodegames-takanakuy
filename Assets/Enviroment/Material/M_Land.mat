@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Land
   m_Shader: {fileID: 4800000, guid: fdcc1f820770fb24da5893988fbe0a8d, type: 3}
-  m_ShaderKeywords: OUTLINES TCP2_SPEC_TOON TCP2_ZSMOOTH_ON
+  m_ShaderKeywords: TCP2_RIM TCP2_SPEC_TOON TCP2_ZSMOOTH_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -74,16 +74,16 @@ Material:
     - _Offset2: 0
     - _Outline: 10
     - _Parallax: 0.02
-    - _RampSmooth: 0.01
-    - _RampThreshold: 0.736
-    - _Shininess: 0.14
+    - _RampSmooth: 0.71
+    - _RampThreshold: 0.7
+    - _Shininess: 0.28
     - _SmoothnessTextureChannel: 0
-    - _SpecSmooth: 0
+    - _SpecSmooth: 0.91
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _TexLod: 5
     - _UVSec: 0
-    - _ZSmooth: -0.5
+    - _ZSmooth: 3
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
@@ -91,4 +91,4 @@ Material:
     - _HColor: {r: 0.6, g: 0.6, b: 0.6, a: 1}
     - _OutlineColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _SColor: {r: 0.4, g: 0.4, b: 0.4, a: 1}
-    - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _SpecColor: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
