@@ -74,11 +74,11 @@ Material:
     - _Offset2: 0
     - _Outline: 10
     - _Parallax: 0.02
-    - _RampSmooth: 0.71
-    - _RampThreshold: 0.7
-    - _Shininess: 0.28
+    - _RampSmooth: 0.03
+    - _RampThreshold: 0
+    - _Shininess: 0.32
     - _SmoothnessTextureChannel: 0
-    - _SpecSmooth: 0.91
+    - _SpecSmooth: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _TexLod: 5
@@ -91,4 +91,4 @@ Material:
     - _HColor: {r: 0.6, g: 0.6, b: 0.6, a: 1}
     - _OutlineColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _SColor: {r: 0.4, g: 0.4, b: 0.4, a: 1}
-    - _SpecColor: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
+    - _SpecColor: {r: 0.23584908, g: 0.22583662, b: 0.22583662, a: 1}
