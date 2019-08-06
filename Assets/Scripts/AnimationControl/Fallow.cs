@@ -7,18 +7,19 @@ public class Fallow : MonoBehaviour
 {
     public GameObject objFalow;
     public Rigidbody rbFallow;
+    [SerializeField]Vector3 offSet = new Vector3(0, .7f, 0);
     [SerializeField]AnimationControler animationControler;
 
     void Awake()
     {
-        transform.position = new Vector3(objFalow.transform.position.x, objFalow.transform.position.y + .5f, objFalow.transform.position.z);
+        transform.position = objFalow.transform.position + offSet;
         animationControler = GetComponent<AnimationControler>();
         rbFallow = objFalow.GetComponent<Rigidbody>();
     }
 
     void LookDir()
     {
-        Debug.Log(Math.Sign(rbFallow.velocity.z));
+        //Debug.Log(Math.Sign(rbFallow.velocity.z));
 
         if (Math.Sign(rbFallow.velocity.x) > 0 && animationControler.lookLeft)
         {
@@ -40,9 +41,9 @@ public class Fallow : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        transform.position = new Vector3(objFalow.transform.position.x, objFalow.transform.position.y + .5f, objFalow.transform.position.z);
+        transform.position = objFalow.transform.position + offSet;
         LookDir();
     }
 }

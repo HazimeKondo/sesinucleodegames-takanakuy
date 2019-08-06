@@ -5,6 +5,7 @@ using UnityEngine.Serialization;
 using DragonBones;
 
 [RequireComponent(typeof(UnityArmatureComponent))]
+[RequireComponent(typeof(Fallow))]
 public class AnimationControler : MonoBehaviour
 {
     public UnityArmatureComponent armature;
