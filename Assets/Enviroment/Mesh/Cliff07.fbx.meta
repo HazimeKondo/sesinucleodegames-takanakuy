@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Fbx Default Material6
-    second: {fileID: 2100000, guid: c36fc499c2de413468ee32fd9a4740d1, type: 2}
+    second: {fileID: 2100000, guid: d0e8926c5917fa045b6290f2574686e4, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Cliff
+  m_Name: M_Tree
   m_Shader: {fileID: 4800000, guid: fdcc1f820770fb24da5893988fbe0a8d, type: 3}
   m_ShaderKeywords: OUTLINES TCP2_SPEC_TOON TCP2_ZSMOOTH_ON
   m_LightmapFlags: 4
@@ -40,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: fb6420fd37293bc4ca571d25b134900a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3d671eac5899df64c9f219935790f0f1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -72,11 +72,11 @@ Material:
     - _OcclusionStrength: 1
     - _Offset1: 0
     - _Offset2: 0
-    - _Outline: 5
+    - _Outline: 3
     - _Parallax: 0.02
     - _RampSmooth: 0.01
-    - _RampThreshold: 0.616
-    - _Shininess: 0.06
+    - _RampThreshold: 0.415
+    - _Shininess: 0.03
     - _SmoothnessTextureChannel: 0
     - _SpecSmooth: 0
     - _SpecularHighlights: 1
