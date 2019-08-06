@@ -1714,8 +1714,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202187555}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalPosition: {x: 0, y: 0.7, z: 0}
+  m_LocalScale: {x: 3, y: 3.5, z: 1}
   m_Children:
   - {fileID: 326827979}
   - {fileID: 2089226264}
@@ -1827,6 +1827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objFalow: {fileID: 912829977}
   rbFallow: {fileID: 0}
+  offSet: {x: 0, y: 0.7, z: 0}
   animationControler: {fileID: 0}
 --- !u!114 &1202187561
 MonoBehaviour:
