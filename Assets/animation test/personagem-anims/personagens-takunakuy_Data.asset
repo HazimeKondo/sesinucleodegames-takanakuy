@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a64e5b0e436d4bed9780211ae245f7b, type: 3}
+  m_Name: personagens-takunakuy_Data
+  m_EditorClassIdentifier: 
+  dataName: personagens-takunakuy
+  dragonBonesJSON: {fileID: 4900000, guid: e06565ec540769942b32c45c210f8c17, type: 3}
+  textureAtlas:
+  - textureAtlasJSON: {fileID: 4900000, guid: cafcf3ac0e64c7646a239bcd062b6155, type: 3}
+    texture: {fileID: 2800000, guid: 0abc46c74a549f14684fc42a3e729381, type: 3}
+    material: {fileID: 2100000, guid: 6cd3168144aa4f348ade49c279fa28a8, type: 2}
+    uiMaterial: {fileID: 0}

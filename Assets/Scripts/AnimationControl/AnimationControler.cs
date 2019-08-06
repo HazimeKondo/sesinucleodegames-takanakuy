@@ -17,6 +17,7 @@ public class AnimationControler : MonoBehaviour
     private void Awake()
     {
         armature = GetComponent<UnityArmatureComponent>();
+        
     }
 
     private void Update()
